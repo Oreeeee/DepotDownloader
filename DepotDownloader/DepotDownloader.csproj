@@ -1,7 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <PublishAot>true</PublishAot>
+    <WindowsSupportedOSPlatformVersion>5.1</WindowsSupportedOSPlatformVersion>
+    <TargetPlatformMinVersion>5.1</TargetPlatformMinVersion>
+    <SupportWinXP>true</SupportWinXP>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <RollForward>LatestMajor</RollForward>
     <Version>3.0.0</Version>
@@ -13,6 +18,11 @@
     <TreatWarningsAsErrors Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</TreatWarningsAsErrors>
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VC-LTL" Version="5.2.1-Beta4" />
+    <PackageReference Include="YY-Thunks" Version="1.1.6-Beta9" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\LICENSE" Link="LICENSE">
